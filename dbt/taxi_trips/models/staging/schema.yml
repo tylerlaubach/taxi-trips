@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_yellow_taxi
+    description: "Renamed NYC Yellow Taxi ride data."
+    tests:
+      - not_null:
+          column_name: pickup_ts
+      - not_null:
+          column_name: dropoff_ts
+      # - test_accepted_range:
+      #     column_name: trip_distance_mi
+      #     min_value: 0.1
+      #     max_value: 100
+      # - test_expression_is_true:
+      #     expr: "pickup_ts < dropoff_ts"

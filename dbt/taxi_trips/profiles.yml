@@ -1,0 +1,10 @@
+taxi_trips:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../../data/nyc_taxi.duckdb"     # created on first run
+      threads: 4
+      extensions:                      # helpful for parquet + S3 later
+        - httpfs
+        - parquet
