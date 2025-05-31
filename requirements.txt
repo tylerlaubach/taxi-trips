@@ -1,0 +1,11 @@
+pandas
+duckdb
+dbt-duckdb
+lightgbm
+scikit-learn
+plotly
+requests
+dagster
+dagit
+dagster-duckdb
+dagster-dbt

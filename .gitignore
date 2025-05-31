@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Data
+data/raw/
+*.duckdb
+artifacts/
+models/*.pkl
+reports/
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/.dbt/
