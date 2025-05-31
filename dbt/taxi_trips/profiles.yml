@@ -3,8 +3,8 @@ taxi_trips:
   outputs:
     dev:
       type: duckdb
-      path: "../../data/nyc_taxi.duckdb"     # created on first run
+      path: "../../data/nyc_taxi.duckdb"
       threads: 4
-      extensions:                      # helpful for parquet + S3 later
+      extensions:                  
         - httpfs
         - parquet

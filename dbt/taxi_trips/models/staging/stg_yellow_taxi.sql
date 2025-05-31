@@ -1,4 +1,4 @@
-{% set source_tbl = source('raw', 'yellow_tripdata') %}
+{% set source_tbl = ref('raw_yellow_tripdata') %}
 
 WITH source AS (
     SELECT

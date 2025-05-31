@@ -23,4 +23,5 @@ SELECT
         ELSE 'long'
         END AS trip_distance_category
     , fare_amount / NULLIF(trip_distance_miles, 0) AS fare_per_mile
+    , STRFTIME(pickup_ts, '%Y-%m')  AS year_month
 FROM base

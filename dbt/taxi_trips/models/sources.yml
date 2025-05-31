@@ -1,16 +1,12 @@
 version: 2
 
-sources:
-  - name: raw
-    schema: main
-    tables:
-      - name: yellow_tripdata
-        description: "One month of NYC Yellow Taxi trips in Parquet format."
-        external:
-          location: "../../data/raw/yellow_tripdata_2024-01.parquet"
-          format: "parquet"
-        # columns:
-        #   - name: vendorid
-        #     data_type: integer
-        #   - name: tpep_pickup_datetime
-        #   - name: tpep_dropoff_datetime
+# sources:
+#   - name: raw
+#     schema: main
+#     tables:
+#       - name: yellow_tripdata
+#         description: "NYC Yellow Taxi trips in Parquet format."
+#         external:
+#           external_table: true
+#           location: "../../data/raw/yellow_tripdata_*.parquet"
+#           format: "parquet"
