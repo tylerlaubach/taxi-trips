@@ -3,7 +3,7 @@ taxi_trips:
   outputs:
     dev:
       type: duckdb
-      path: "../../data/nyc_taxi.duckdb"
+      path: "/data/nyc_taxi.duckdb"
       threads: 4
       extensions:                  
         - httpfs
