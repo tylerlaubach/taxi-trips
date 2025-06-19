@@ -45,6 +45,28 @@ title: Welcome to Evidence
     series=category
 />
 
+```sql avg_duration_by_hour
+-- :name avg_duration_by_hour
+-- :source taxi_db
+
+SELECT
+  EXTRACT(HOUR FROM pickup_ts)         AS pickup_hour,
+  AVG(
+    EXTRACT(EPOCH FROM (dropoff_ts - pickup_ts)) / 60.0
+  )                                      AS avg_duration_min
+FROM main.stg_yellow_taxi
+GROUP BY 1
+ORDER BY 1
+;
+```
+
+<BarChart
+  data={avg_duration_by_hour}
+  title="Avg Trip Duration by Hour"
+  x="pickup_hour"
+  y="avg_duration_min"
+/>
+
 ## What's Next?
 - [Connect your data sources](settings)
 - Edit/add markdown files in the `pages` folder

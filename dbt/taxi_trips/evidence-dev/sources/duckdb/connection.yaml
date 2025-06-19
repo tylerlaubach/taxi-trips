@@ -2,4 +2,4 @@
 name: duckdb
 type: duckdb
 options:
-  filename: taxi_trips.duckdb
+  filename: ../../data/nyc_taxi.duckdb

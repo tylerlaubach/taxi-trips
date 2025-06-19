@@ -1,0 +1,28 @@
+# superset-docker/docker-compose.yml
+services:
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: superset
+      POSTGRES_USER: superset
+      POSTGRES_PASSWORD: superset
+    volumes:
+      - superset_db_data:/var/lib/postgresql/data
+
+  superset:
+    build: .
+    container_name: superset
+    environment:
+      # point Superset at the Postgres metadata DB:
+      SUPERSET_DATABASE_URI: postgresql+psycopg2://superset:superset@db:5432/superset
+    ports:
+      - "8088:8088"
+    volumes:
+      # mount your DuckDB file (adjust path if needed):
+      - ../data/nyc_taxi.duckdb:/app/data/nyc_taxi.duckdb
+    depends_on:
+      - db
+
+volumes:
+  superset_db_data:

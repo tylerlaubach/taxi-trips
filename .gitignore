@@ -14,3 +14,6 @@ reports/
 dbt/target/
 dbt/logs/
 dbt/.dbt/
+
+# Superset
+superset/superset_config.py
